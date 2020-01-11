@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bookers2</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+    <header>
+        <hgroup class="header">
+            <div class="container">
+                <!-- 箱を作る -->
+                <p class="booker">Bookers</p>
+                <div id="slidemenu">
+                    <ul class="navbar-nav navbar-right" data-hover="dropdown" data-animations="zoomIn fadeIn fadeInUp fadeIn">
+                        <% if user_signed_in? %>
+                        <li class="nav-list-item">
+                            <span class="glyphicon glyphicon-home" aria-hidden="true">
+                                <%= link_to "Home", user_path(current_user.id) %></span>
+                        </li>
+                        <li class="nav-list-item">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true">
+                                <%= link_to 'Users', users_path %></span>
+                        </li>
+                        <li class="nav-list-item">
+                            <span class="glyphicon glyphicon-book" aria-hidden="true">
+                                <%= link_to 'Books', books_path %></span>
+                        </li>
+                        <li class="nav-list-item">
+                            <span class="glyphicon glyphicon-log-out" aria-hidden="true">
+                                <%= link_to "logout", destroy_user_session_path, method: :delete %></span>
+                        </li>
+                        <% else %>
+                        <li class="nav-list-item">
+                            <span class="glyphicon glyphicon-home" aria-hidden="true">
+                                <%= link_to "Home", "/" %></span>
+                        </li>
+                        <li class="nav-list-item">
+                            <span class="glyphicon glyphicon-link" aria-hidden="true">
+                                <%= link_to "About", "/home/about" %></span>
+                        </li>
+                        <li class="nav-list-item">
+                            <span class="glyphicon glyphicon-edit" aria-hidden="true">
+                                <%= link_to "Sign up", new_user_registration_path %></span>
+                        </li>
+                        <li class="nav-list-item">
+                            <span class="glyphicon glyphicon-log-in" aria-hidden="true">
+                                <%= link_to "login", new_user_session_path %></span>
+                        </li>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+        </hgroup>
+    </header>
+<!--     <div id="container">
+        <div id="theTarget">
+            <div class="image1"></div>
+            <div class="image2"></div>
+            <div class="image3"></div>
+            <div class="image4"></div>
+            <div class="image5"></div>
+        </div>
+    </div> -->
+    <%= render 'layouts/notifications' %>
+    <%= yield %>
+    <footer>
+        <p>@CopyRight Infratop.inc</p>
+    </footer>
+</body>
+
+</html>

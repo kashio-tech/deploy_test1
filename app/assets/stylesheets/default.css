@@ -1,0 +1,42 @@
+*{
+	margin :0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.container1{
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+hgroup{
+	width: 100%;
+	height: 50px;
+	background-color: #222;
+	color: #fff;
+}
+.navbar-nav{
+	height: 50px;
+	line-height: 50px;
+	margin: 0 auto;
+}
+.booker{
+	font-size: 20px;
+	float: left;
+}
+.nav-list-item{
+	font-size: 16px;
+	float: left;
+	display: inline-block;
+	margin: 0 30px;
+	color: #9d9d9d;
+}
+
+footer{
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+ul {
+  list-style: none;
+}

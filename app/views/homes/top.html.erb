@@ -1,0 +1,17 @@
+<%= flash[:signedout] %>
+
+<div class="container1">
+<h1>
+	welcome to
+	<span class="glyphicon glyphicon-book" aria-hidden="true"></span><<strong>Bookers !!</strong>
+</h1>
+<p>In <span class="glyphicon glyphicon-book" aria-hidden="true"></span><<strong>Bookers,</strong><br>
+you can share and exchange your opinionsm inpressions, and<br>
+emotions<br>
+about various books!</p>
+
+ <div class="actions">
+    <%= link_to "Log in",  "/users/sign_in", class: "btn btn-primary" %>
+     <%= link_to "Sign up",  "/users/sign_up", class: "btn btn-success" %>
+  </div>
+</div>
